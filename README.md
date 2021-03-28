@@ -82,17 +82,17 @@ declare const css: (files:string|string[]) => Promise<void>;
 
 ```html
 <!-- Lazy load Web Components by tagging custom elements with the web-component attribute. -->
+<!-- In this example the custom-element.js file will be imported from the configured jsDir directory. -->
 <custom-element web-component></custom-element>
 
+<!-- You can override the default import behavior by providing a custom file name, relative path, or a URL. -->
+<custom-element web-component="custom-file-name.js"></custom-element>
+
 <!-- By default components are loaded and mounted when they enter the viewport. -->
-<!-- You can bypass the lazy loader using the loading attribute. -->
+<!-- You can bypass the lazy loader by using the loading attribute. -->
 <custom-element web-component loading="eager"></custom-element>
 
-<!-- Lazy load CSS by attaching the css attribute to any element within the documents body. -->
-<!-- You can load multiple files using a whitespace separator. The .css file extenstion is optional. -->
+<!-- You can lazy load CSS by attaching the css attribute to any element within the documents body. -->
+<!-- You can load multiple files using a whitespace separator. Note that the .css file extenstion is optional. -->
 <div class="my-awesome-class" css="awesome-transitions awesome.css"></div>
-
-<!-- By default Lazy Loader will attempt to load a file from the jsDir directory using the custom elements tag name. -->
-<!-- You can override the default behavior by providing a custom file name, relative path, or a URL. -->
-<custom-element web-component="custom-file-name.js"></custom-element>
 ```
