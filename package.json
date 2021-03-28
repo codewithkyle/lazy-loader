@@ -1,0 +1,22 @@
+{
+  "name": "@codewithkyle/lazy-loader",
+  "version": "1.0.0",
+  "description": "A lightweight Web Component based lazy loading library.",
+  "main": "lazy-loader.min.mjs",
+  "types": "lazy-loader.d.ts",
+  "files": [
+    "lazy-loader.min.mjs",
+    "lazy-loader.min.js",
+    "lazy-loader.d.ts"
+  ],
+  "scripts": {
+    "build": "esbuild ./src/lazy-loader.ts --outfile=lazy-loader.min.mjs --format=esm --minify --bundle && esbuild ./src/lazy-loader.ts --outfile=lazy-loader.min.js --format=iife --bundle --minify-whitespace --global-name=LazyLoader",
+    "test": "npm run build && cp ./lazy-loader.min.js ./test/lazy-loader.min.js && cp ./lazy-loader.min.mjs ./test/lazy-loader.min.mjs && serve ./test"
+  },
+  "author": "Kyle Andrews <codingwithkyle@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.10.2",
+    "serve": "^11.3.2"
+  }
+}
