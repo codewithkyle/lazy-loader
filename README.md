@@ -91,4 +91,8 @@ declare const css: (files:string|string[]) => Promise<void>;
 <!-- Lazy load CSS by attaching the css attribute to any element within the documents body. -->
 <!-- You can load multiple files using a whitespace separator. The .css file extenstion is optional. -->
 <div class="my-awesome-class" css="awesome-transitions awesome.css"></div>
+
+<!-- By default Lazy Loader will attempt to load a file from the jsDir directory using the custom elements tag name. -->
+<!-- You can override the default behavior by providing a custom file name, relative path, or a URL. -->
+<custom-element web-component="custom-file-name.js"></custom-element>
 ```
